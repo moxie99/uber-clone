@@ -53,7 +53,7 @@ const NavOptions = () => {
             onPress={() => navigation.navigate(item.screen)}
             disabled={!origin}
           >
-            <View style={tw`${!origin && "opacity-20"}`}>
+            <View style={!origin && styles.opacity}>
               <Image
                 style={{ width: 120, height: 120, resizeMode: "contain" }}
                 source={{ uri: item.image }}
@@ -74,3 +74,9 @@ const NavOptions = () => {
 };
 
 export default NavOptions;
+
+const styles = StyleSheet.create({
+  opacity: {
+    opacity: 0.1,
+  },
+});
